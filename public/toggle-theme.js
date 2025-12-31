@@ -1,19 +1,8 @@
-const primaryColorScheme = "light"; // "light" | "dark"
-
-// Get theme data from local storage
-const currentTheme = localStorage.getItem("theme");
+const primaryColorScheme = "light"; // "light" | "dark" - 强制使用亮色
 
 function getPreferTheme() {
-  // return theme value in local storage if it is set
-  if (currentTheme) return currentTheme;
-
-  // return primary color scheme if it is set
-  if (primaryColorScheme) return primaryColorScheme;
-
-  // return user device's prefer color scheme
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  // 强制使用亮色主题，忽略 localStorage 和系统偏好
+  return primaryColorScheme;
 }
 
 let themeValue = getPreferTheme();

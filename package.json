@@ -10,7 +10,8 @@
     "astro": "astro",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "obsidian": "node scripts/sync.js"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.12",
@@ -19,6 +20,8 @@
     "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.12.0",
     "dayjs": "^1.11.13",
+    "fs-extra": "^11.3.3",
+    "gray-matter": "^4.0.3",
     "lodash.kebabcase": "^4.1.1",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",

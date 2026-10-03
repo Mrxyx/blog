@@ -1,6 +1,10 @@
 # build output
 dist/
 
+# temporary Obsidian sync transaction
+.obsidian-sync-*/
+.obsidian-sync.lock
+
 # generated types
 .astro/
 

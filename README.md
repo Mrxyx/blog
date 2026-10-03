@@ -1,180 +1,125 @@
-# AstroPaper 📄
+# Mr.X's Blog
 
-![AstroPaper](public/astropaper-og.jpg)
-[![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/community/file/1356898632249991861)
-![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![GitHub](https://img.shields.io/github/license/satnaing/astro-paper?color=%232F3741&style=for-the-badge)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white&style=for-the-badge)](https://conventionalcommits.org)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
+个人博客：[www.mrxyx.cn](https://www.mrxyx.cn/)。
+使用 [AstroPaper](https://github.com/satnaing/astro-paper) 5.x 主题（项目版本字段为 5.5.0），
+从 Obsidian 同步公开笔记，提交到 GitHub 后由 Cloudflare Pages 自动部署。
 
-AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro blog theme. This theme is designed and crafted based on [my personal blog](https://satnaing.dev/blog).
+## 日常发布
 
-Read [the blog posts](https://astro-paper.pages.dev/posts/) or check [the README Documentation Section](#-documentation) for more info.
-
-## 🔥 Features
-
-- [x] type-safe markdown
-- [x] super fast performance
-- [x] accessible (Keyboard/VoiceOver)
-- [x] responsive (mobile ~ desktops)
-- [x] SEO-friendly
-- [x] light & dark mode
-- [x] fuzzy search
-- [x] draft posts & pagination
-- [x] sitemap & rss feed
-- [x] followed best practices
-- [x] highly customizable
-- [x] dynamic OG image generation for blog posts [#15](https://github.com/satnaing/astro-paper/pull/15) ([Blog Post](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/))
-
-_Note: I've tested screen-reader accessibility of AstroPaper using **VoiceOver** on Mac and **TalkBack** on Android. I couldn't test all other screen-readers out there. However, accessibility enhancements in AstroPaper should be working fine on others as well._
-
-## ✅ Lighthouse Score
-
-<p align="center">
-  <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fastro-paper.pages.dev%2F&form_factor=desktop">
-    <img width="710" alt="AstroPaper Lighthouse Score" src="AstroPaper-lighthouse-score.svg">
-  <a>
-</p>
-
-## 🚀 Project Structure
-
-Inside of AstroPaper, you'll see the following folders and files:
+先安装依赖：
 
 ```bash
-/
-├── public/
-│   ├── assets/
-|   ├── pagefind/ # auto-generated when build
-│   └── favicon.svg
-│   └── astropaper-og.jpg
-│   └── favicon.svg
-│   └── toggle-theme.js
-├── src/
-│   ├── assets/
-│   │   └── icons/
-│   │   └── images/
-│   ├── components/
-│   ├── data/
-│   │   └── blog/
-│   │       └── some-blog-posts.md
-│   ├── layouts/
-│   └── pages/
-│   └── styles/
-│   └── utils/
-│   └── config.ts
-│   └── constants.ts
-│   └── content.config.ts
-└── astro.config.ts
+npm ci
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+在 Obsidian 笔记的 YAML 属性中设置：
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-All blog posts are stored in `src/data/blog` directory.
-
-## 📖 Documentation
-
-Documentation can be read in two formats\_ _markdown_ & _blog post_.
-
-- Configuration - [markdown](src/data/blog/how-to-configure-astropaper-theme.md) | [blog post](https://astro-paper.pages.dev/posts/how-to-configure-astropaper-theme/)
-- Add Posts - [markdown](src/data/blog/adding-new-post.md) | [blog post](https://astro-paper.pages.dev/posts/adding-new-posts-in-astropaper-theme/)
-- Customize Color Schemes - [markdown](src/data/blog/customizing-astropaper-theme-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/customizing-astropaper-theme-color-schemes/)
-- Predefined Color Schemes - [markdown](src/data/blog/predefined-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/predefined-color-schemes/)
-
-## 💻 Tech Stack
-
-**Main Framework** - [Astro](https://astro.build/)  
-**Type Checking** - [TypeScript](https://www.typescriptlang.org/)  
-**Styling** - [TailwindCSS](https://tailwindcss.com/)  
-**UI/UX** - [Figma Design File](https://www.figma.com/community/file/1356898632249991861)  
-**Static Search** - [FuseJS](https://pagefind.app/)  
-**Icons** - [Tablers](https://tabler-icons.io/)  
-**Code Formatting** - [Prettier](https://prettier.io/)  
-**Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  
-**Illustration in About Page** - [https://freesvgillustration.com](https://freesvgillustration.com/)  
-**Linting** - [ESLint](https://eslint.org)
-
-## 👨🏻‍💻 Running Locally
-
-You can start using this project locally by running the following command in your desired directory:
-
-```bash
-# pnpm
-pnpm create astro@latest --template satnaing/astro-paper
-
-# npm
-npm create astro@latest -- --template satnaing/astro-paper
-
-# yarn
-yarn create astro --template satnaing/astro-paper
-
-# bun
-bun create astro@latest -- --template satnaing/astro-paper
-```
-
-Then start the project by running the following commands:
-
-```bash
-# install dependencies if you haven't done so in the previous step.
-pnpm install
-
-# start running the project
-pnpm run dev
-```
-
-As an alternative approach, if you have Docker installed, you can use Docker to run this project locally. Here's how:
-
-```bash
-# Build the Docker image
-docker build -t astropaper .
-
-# Run the Docker container
-docker run -p 4321:80 astropaper
-```
-
-## Google Site Verification (optional)
-
-You can easily add your [Google Site Verification HTML tag](https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag) in AstroPaper using an environment variable. This step is optional. If you don't add the following environment variable, the google-site-verification tag won't appear in the HTML `<head>` section.
-
-```bash
-# in your environment variable file (.env)
-PUBLIC_GOOGLE_SITE_VERIFICATION=your-google-site-verification-value
-```
-
-> See [this discussion](https://github.com/satnaing/astro-paper/discussions/334#discussioncomment-10139247) for adding AstroPaper to the Google Search Console.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-> **_Note!_** For `Docker` commands we must have it [installed](https://docs.docker.com/engine/install/) in your machine.
-
-| Command                              | Action                                                                                                                           |
-| :----------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| `pnpm install`                       | Installs dependencies                                                                                                            |
-| `pnpm run dev`                       | Starts local dev server at `localhost:4321`                                                                                      |
-| `pnpm run build`                     | Build your production site to `./dist/`                                                                                          |
-| `pnpm run preview`                   | Preview your build locally, before deploying                                                                                     |
-| `pnpm run format:check`              | Check code format with Prettier                                                                                                  |
-| `pnpm run format`                    | Format codes with Prettier                                                                                                       |
-| `pnpm run sync`                      | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
-| `pnpm run lint`                      | Lint with ESLint                                                                                                                 |
-| `docker compose up -d`               | Run AstroPaper on docker, You can access with the same hostname and port informed on `dev` command.                              |
-| `docker compose run app npm install` | You can run any command above into the docker container.                                                                         |
-| `docker build -t astropaper .`       | Build Docker image for AstroPaper.                                                                                               |
-| `docker run -p 4321:80 astropaper`   | Run AstroPaper on Docker. The website will be accessible at `http://localhost:4321`.                                             |
-
-> **_Warning!_** Windows PowerShell users may need to install the [concurrently package](https://www.npmjs.com/package/concurrently) if they want to [run diagnostics](https://docs.astro.build/en/reference/cli-reference/#astro-check) during development (`astro check --watch & astro dev`). For more info, see [this issue](https://github.com/satnaing/astro-paper/issues/113).
-
-## ✨ Feedback & Suggestions
-
-If you have any suggestions/feedback, you can contact me via [my email](mailto:contact@satnaing.dev). Alternatively, feel free to open an issue if you find bugs or want to request new features.
-
-## 📜 License
-
-Licensed under the MIT License, Copyright © 2025
-
+```yaml
 ---
+title: 我的文章
+date: 2026-10-03
+isPublished: true
+tags:
+  - 随笔
+description: 文章简介
+# 可选；设置后可以在修改标题时保持文章地址稳定
+slug: my-post
+---
+```
 
-Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contributors](https://github.com/satnaing/astro-paper/graphs/contributors).
+预览同步清单，然后同步并构建：
+
+```bash
+npm run obsidian -- --dry-run
+npm run blog:prepare
+```
+
+检查文章、图片和删除记录，再提交并发布：
+
+```bash
+git status --short
+git diff
+git add src/data/blog src/assets/images
+git commit -m "docs: 更新博客文章"
+git push origin main
+```
+
+Cloudflare Pages 的生产分支是 main，构建命令为 npm run build，产物目录为 dist。
+推送后，在 Cloudflare 的 blog 项目 Deployments 页面检查对应提交的构建和部署结果。
+
+blog:prepare 只做本地同步与构建；commit 和 push 由你执行。
+第一次修改脚本、配置或文档时，也需要把相应文件加入提交。
+
+## Obsidian 同步规则
+
+默认笔记根目录在 scripts/sync.js 中，当前为：
+
+```
+/Users/mrx/Library/CloudStorage/Dropbox/OneDrive/Mrx
+```
+
+可以通过环境变量临时覆盖，无需修改脚本：
+
+```bash
+OBSIDIAN_ROOT="/path/to/vault" npm run obsidian -- --dry-run
+```
+
+- 递归扫描 Notes、Daily、Inbox 的 Markdown 文件，附件来自 Assets。
+- 只有布尔值 isPublished: true 才会发布；带引号的 "true"、"false" 均不发布。
+- 首次发布必须提供有效的 date 或 pubDatetime；已有文章缺省时保留原发布日期。
+- slug 优先使用笔记的自定义值，再保留已有文章的值，首次发布默认按标题生成。
+- 文章统一写入 src/data/blog，保持原文件名；不同目录的同名公开笔记、重复 slug 会报错。
+- src/data/blog 的 Markdown 文件是同步产物，手动写入的文章也会在下次同步时被删除。
+- 图片嵌入 ![[图片.png]] 会复制附件并转换路径，支持附件子目录和空格文件名；接受 Obsidian 尺寸语法，但尺寸参数不会带入博客。
+- 双链 [[笔记名|显示文本]] 按目标的实际 slug 转换；同名目标可用 [[Notes/子目录/笔记名]] 指定。
+- 不存在或未发布的双链、缺图、无效元数据均会中止同步，不会留下半套文章。
+- 代码块、行内代码和转义的双链示例保持原样。
+- 当前不支持笔记嵌入、标题／块双链引用及符号链接，遇到时会明确报错。
+- 普通 Markdown 链接和图片路径不会自动搬运，Obsidian 附件请使用图片嵌入语法。
+- 取消 isPublished 或删除源笔记后，下次同步会删除对应的博客文章。
+- src/data/blog/.obsidian-sync.json 记录本脚本管理的图片，应随文章提交。后续同步会删除这些图片中不再被引用的文件，保留主题资源与未登记图片。首次运行前的遗留图片不会自动清理。
+
+同步先完整读取和校验输入，再在临时目录准备结果，最后替换文章与图片目录。
+替换失败会尝试回滚；回滚也失败时，错误信息会指出保存旧文件的临时目录。
+同一仓库同时只能有一个同步进程。若进程被强制结束留下 .obsidian-sync.lock，
+确认没有同步进程后再删除锁文件；若存在 .obsidian-sync-\* 临时目录，先检查和恢复其中的备份。
+
+## 常用命令
+
+| 命令                          | 用途                                        |
+| ----------------------------- | ------------------------------------------- |
+| npm run obsidian -- --dry-run | 只预览同步清单，不写入文件                  |
+| npm run obsidian              | 同步 Obsidian 文章和图片                    |
+| npm run blog:prepare          | 同步成功后再构建                            |
+| npm run dev                   | 本地开发预览                                |
+| npm run build                 | 类型检查、构建网站和搜索索引                |
+| npm run preview               | 预览构建后的站点                            |
+| npm test                      | 用临时笔记验证同步，不需要访问你的 Obsidian |
+| npm run lint                  | 检查代码                                    |
+| npm run format:check          | 检查格式                                    |
+| npm run sync                  | Astro 类型同步，与 Obsidian 同步无关        |
+
+GitHub Actions 的 PR 检查使用 npm ci、同步测试、lint、格式检查和构建。
+线上部署只运行 build，不依赖本地 Obsidian 路径。
+构建产物 dist、public/pagefind 已被 Git 忽略，无需提交。
+
+## 主题来源与更新
+
+主题上游是 [satnaing/astro-paper](https://github.com/satnaing/astro-paper)。
+本仓库由 Astro 模板初始化，是独立仓库，没有保留上游的 Git 历史或 GitHub fork 关系。
+
+登记上游后可查看它的版本：
+
+```bash
+git remote add upstream https://github.com/satnaing/astro-paper.git
+git fetch upstream --tags
+```
+
+依赖更新与主题源码更新分开处理，npm update 不会更新主题组件。
+小范围修复在分支中按需移植；跨大版本按
+[官方升级说明](https://github.com/satnaing/astro-paper/wiki/Upgrading)迁移，
+保留本站配置、文章、同步脚本、首页和亮色主题改动。
+
+AstroPaper 6.x 改动了配置文件和内容目录，需同步调整脚本的输出路径与图片相对路径。
+升级应在独立分支完成，构建与预览通过后再合并到 main。
+由于没有共同历史，不建议直接把上游 main 强行合并到当前仓库。

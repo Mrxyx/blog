@@ -11,7 +11,9 @@
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "obsidian": "node scripts/sync.js"
+    "obsidian": "node scripts/sync.js",
+    "blog:prepare": "npm run obsidian && npm run build",
+    "test": "node --test scripts/sync.test.js"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.12",
@@ -22,6 +24,7 @@
     "dayjs": "^1.11.13",
     "fs-extra": "^11.3.3",
     "gray-matter": "^4.0.3",
+    "js-yaml": "^4.3.2",
     "lodash.kebabcase": "^4.1.1",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",

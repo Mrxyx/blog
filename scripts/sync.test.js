@@ -271,7 +271,7 @@ test("missing images and unsupported note embeds abort without writes", async t 
 test("rejects unsafe cleanup manifest paths", async t => {
   const f = await fixture(t);
   await fs.outputJson(
-    path.join(f.projectRoot, "src/data/blog/.obsidian-sync.json"),
+    path.join(f.projectRoot, POSTS_DIRECTORY, ".obsidian-sync.json"),
     {
       version: 1,
       images: ["../../../outside.png"],
@@ -287,7 +287,7 @@ test("stale plans cannot overwrite subsequent edits", async t => {
   await f.note("Notes/note.md");
   const plan = await f.plan();
   await fs.outputFile(
-    path.join(f.projectRoot, "src/data/blog/manual.md"),
+    path.join(f.projectRoot, POSTS_DIRECTORY, "manual.md"),
     "new edit"
   );
   const before = await snapshot(f.projectRoot);
@@ -380,20 +380,23 @@ test("Astro builds synced images and links with real content collections", async
     path.join(f.projectRoot, "src/content.config.ts"),
     'import {defineCollection} from "astro:content";\n' +
       'import {glob} from "astro/loaders";\n' +
-      'export const collections = {blog: defineCollection({loader: glob({pattern: "**/*.md", base: "./' +
+      'export const collections = {posts: defineCollection({loader: glob({pattern: "**/*.md", base: "./' +
       POSTS_DIRECTORY +
       '"})})};\n'
   );
   await fs.outputFile(
     path.join(f.projectRoot, "src/pages/posts/[slug].astro"),
     '---\nimport {getCollection, render} from "astro:content";\n' +
-      'export async function getStaticPaths(){return (await getCollection("blog")).map(post => ({params:{slug:post.id},props:{post}}));}\n' +
+      'export async function getStaticPaths(){return (await getCollection("posts")).map(post => ({params:{slug:post.id},props:{post}}));}\n' +
       "const {Content}=await render(Astro.props.post);\n---\n<html><body><Content /></body></html>\n"
+  );
+  const astroPackage = await fs.readJson(
+    path.join(project, "node_modules/astro/package.json")
   );
   const result = spawnSync(
     process.execPath,
     [
-      path.join(project, "node_modules/astro/astro.js"),
+      path.join(project, "node_modules/astro", astroPackage.bin.astro),
       "build",
       "--root",
       f.projectRoot,

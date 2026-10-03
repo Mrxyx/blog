@@ -11,7 +11,7 @@ const DEFAULT_OBSIDIAN_ROOT =
   "/Users/mrx/Library/CloudStorage/Dropbox/OneDrive/Mrx";
 const SOURCE_DIRS = ["Notes", "Daily", "Inbox"];
 const MANIFEST = ".obsidian-sync.json";
-export const POSTS_DIRECTORY = "src/data/blog";
+export const POSTS_DIRECTORY = "src/content/posts";
 
 function parseFrontmatter(text) {
   const unsupported = () => {

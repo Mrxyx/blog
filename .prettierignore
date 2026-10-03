@@ -13,3 +13,4 @@
 !.prettierrc
 !eslint.config.js
 !README.md
+!astro-paper.config.ts
